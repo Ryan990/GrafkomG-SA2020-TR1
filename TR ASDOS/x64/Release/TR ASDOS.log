@@ -1,0 +1,7 @@
+﻿  Source.cpp
+D:\SEMESTER 6\GRAFIKA KOMPUTER\Visual Studio\TR ASDOS\TR ASDOS\Source.cpp(8,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  TR ASDOS.vcxproj -> D:\SEMESTER 6\GRAFIKA KOMPUTER\Visual Studio\TR ASDOS\x64\Release\TR ASDOS.exe
