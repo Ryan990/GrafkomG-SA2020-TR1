@@ -292,7 +292,167 @@ void display(void) {
 	glutSolidSphere(2, 20, 20);
 	glDisable(GL_COLOR_MATERIAL);
 	glPopMatrix();
+	
+	glBegin(GL_LINES); // garis hitam bak sampah
+	glColor3d(0, 0, 0);
+	glVertex3d(7.20, y1, 34.13);
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glVertex3d(3.41, y1, 34.13);
+	glVertex3d(3.41, y1 + 8, 34.13);
+	glVertex3d(3.41, y1, 34.13);
+	glVertex3d(7.20, y1, 34.13);
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glVertex3d(3.41, y1 + 8, 34.13);
+	glVertex3d(7.20, y1, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(7.20, y1, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(3.41, y1, 34.13);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(3.41, y1 + 8, 34.13);
+	glVertex3d(7.20, y1, 34.13); 
+	glVertex3d(7.20, y1, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glEnd();
 
+	glBegin(GL_POLYGON); // badan bak sampah
+	glColor3d(0, 0.5, 0);
+	glVertex3d(3.41, y1, 34.13);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(7.20, y1, 25.47);
+	glVertex3d(7.20, y1, 34.13);// bawah bak sampah
+
+	glVertex3d(3.41, y1, 34.13);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(3.41, y1 + 8, 34.13); // tembok
+
+	glVertex3d(3.41, y1, 34.13);
+	glVertex3d(7.20, y1, 34.13);
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glVertex3d(3.41, y1 + 8, 34.13);// depan bak sampah
+
+	glVertex3d(7.20, y1, 34.13); // tembok
+	glVertex3d(7.20, y1, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 34.13);
+
+	glVertex3d(3.41, y1, 25.47); // belakang
+	glVertex3d(7.20, y1, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(3.41, y1 + 8, 25.47);
+
+	glVertex3d(3.41, y1 + 8, 34.13); // atas
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glEnd();
+	
+	////// TUTUP BAK SAMPAH
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(3.41, y1 + 8, 34.13);
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 34.13);
+
+	glVertex3d(3.41, y1 + 8, 34.13);
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(3.41, y1 + 8.5, 25.47);
+	glVertex3d(3.41, y1 + 8.5, 34.13);
+
+	glVertex3d(3.41, y1 + 8, 34.13);
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glVertex3d(7.20, y1 + 8.5, 34.13);
+	glVertex3d(3.41, y1 + 8.5, 34.13);
+
+	glVertex3d(7.20, y1 + 8, 34.13);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8.5, 25.47);
+	glVertex3d(7.20, y1 + 8.5, 34.13);
+
+	glVertex3d(3.41, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8, 25.47);
+	glVertex3d(7.20, y1 + 8.5, 25.47);
+	glVertex3d(3.41, y1 + 8.5, 25.47);
+
+	glVertex3d(3.41, y1 + 8.5, 34.13);
+	glVertex3d(3.41, y1 + 8.5, 25.47);
+	glVertex3d(7.20, y1 + 8.5, 25.47);
+	glVertex3d(7.20, y1 + 8.5, 34.13);
+	glEnd();
+	
+	glBegin(GL_POLYGON); // Motif bak sampah
+	glColor3d(0, 0.5, 0);
+	glVertex3d(3.61, y1 + 8.5, 34.13); // atas
+	glVertex3d(3.61, y1 + 8.5, 30.77);
+	glVertex3d(7.00, y1 + 8.5, 30.77);
+	glVertex3d(7.00, y1 + 8.5, 34.13);
+
+	glVertex3d(3.61, y1 + 8.5, 34.13);
+	glVertex3d(3.61, y1 + 8.5, 30.77);
+	glVertex3d(3.61, y1 + 8.7, 30.77);
+	glVertex3d(3.61, y1 + 8.7, 34.13);
+
+	glVertex3d(3.61, y1 + 8.5, 34.13);
+	glVertex3d(7.00, y1 + 8.5, 34.13);
+	glVertex3d(7.00, y1 + 8.7, 34.13);
+	glVertex3d(3.61, y1 + 8.7, 34.13);
+
+	glVertex3d(7.00, y1 + 8.5, 34.13);
+	glVertex3d(7.00, y1 + 8.5, 30.77);
+	glVertex3d(7.00, y1 + 8.7, 30.77);
+	glVertex3d(7.00, y1 + 8.7, 34.13);
+
+	glVertex3d(3.61, y1 + 8.5, 30.77);
+	glVertex3d(7.00, y1 + 8.5, 30.77);
+	glVertex3d(7.00, y1 + 8.7, 30.77);
+	glVertex3d(3.61, y1 + 8.7, 30.77);
+
+	glVertex3d(3.61, y1 + 8.7, 34.13);
+	glVertex3d(3.61, y1 + 8.7, 30.77);
+	glVertex3d(7.00, y1 + 8.7, 30.77);
+	glVertex3d(7.00, y1 + 8.7, 34.13);
+	glEnd();
+
+	glBegin(GL_POLYGON); // Motif bak sampah
+	glColor3d(0, 0.5, 0);
+	glVertex3d(3.61, y1 + 8.5, 28.77); // atas
+	glVertex3d(3.61, y1 + 8.5, 26.00);
+	glVertex3d(7.00, y1 + 8.5, 26.00);
+	glVertex3d(7.00, y1 + 8.5, 28.77);
+
+	glVertex3d(3.61, y1 + 8.5, 28.77);
+	glVertex3d(3.61, y1 + 8.5, 26.00);
+	glVertex3d(3.61, y1 + 8.7, 26.00);
+	glVertex3d(3.61, y1 + 8.7, 28.77);
+
+	glVertex3d(3.61, y1 + 8.5, 28.77);
+	glVertex3d(7.00, y1 + 8.5, 28.77);
+	glVertex3d(7.00, y1 + 8.7, 28.77);
+	glVertex3d(3.61, y1 + 8.7, 28.77);
+
+	glVertex3d(7.00, y1 + 8.5, 28.77);
+	glVertex3d(7.00, y1 + 8.5, 26.00);
+	glVertex3d(7.00, y1 + 8.7, 26.00);
+	glVertex3d(7.00, y1 + 8.7, 28.77);
+
+	glVertex3d(3.61, y1 + 8.5, 26.00);
+	glVertex3d(7.00, y1 + 8.5, 26.00);
+	glVertex3d(7.00, y1 + 8.7, 26.00);
+	glVertex3d(3.61, y1 + 8.7, 26.00);
+
+	glVertex3d(3.61, y1 + 8.7, 28.77);
+	glVertex3d(3.61, y1 + 8.7, 26.00);
+	glVertex3d(7.00, y1 + 8.7, 26.00);
+	glVertex3d(7.00, y1 + 8.7, 28.77);
+	glEnd();
 
 	glutSwapBuffers();
 }
