@@ -80,8 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\ChrysN\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\ChrysN\source\repos\GrafkomG-SA2020-TR1\library;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\TR\GrafkomG-SA2020-TR1\library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

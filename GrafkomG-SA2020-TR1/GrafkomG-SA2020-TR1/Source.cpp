@@ -1,8 +1,11 @@
 #include <windows.h>
 #include <GL/glut.h>
 
-int y1 = 20;
+int y1 = 0;
+int y2 = y1 + 50;
+int y3 = y2 + 5;
 void init(void);
+void wall(void);
 void display(void);
 void keyboard(unsigned char, int, int);
 void shape(int, int);
@@ -45,6 +48,154 @@ void init(void) {
 	glLineWidth(3.0f);
 }
 
+void wall() {
+	glColor3ub(0, 255, 0);
+	//left
+	glBegin(GL_POLYGON);
+	glVertex3d(-77.95, y2, 20.24);
+	glVertex3d(-77.95, y1, 20.24);
+	glVertex3d(-77.95, y1, -38.25);
+	glVertex3d(-77.95, y2, -38.25);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(-77.95, y1, 20.24);
+	glVertex3d(-77.95, y2, 20.24);
+	glVertex3d(-60.64, y2, 36.13);
+	glVertex3d(-60.64, y1, 36.13);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(-60.64, y2, 36.13);
+	glVertex3d(-60.64, y1, 36.13);
+	glVertex3d(3.41, y1, 36.13);
+	glVertex3d(3.41, y2, 36.13);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(3.41, y2, 36.13);
+	glVertex3d(3.41, y1, 36.13);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(3.41, y2, 25.47);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(3.34, y2, -2.91);
+	glVertex3d(3.34, y1, -2.91);
+	glVertex3d(3.29, y1, -38.25);
+	glVertex3d(3.29, y2, -38.25);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(3.29, y2, -38.25);
+	glVertex3d(3.29, y1, -38.25);
+	glVertex3d(-77.95, y1, -38.25);
+	glVertex3d(-77.95, y2, -38.25);
+	glEnd();
+
+	glColor3ub(255, 255, 0);
+	//center
+	glBegin(GL_POLYGON);
+	glVertex3d(3.41, y2, 25.47);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(44.70, y1, 25.47);
+	glVertex3d(44.70, y2, 25.47);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(44.70, y2, 25.47);
+	glVertex3d(44.70, y1, 25.47);
+	glVertex3d(44.70, y1, 16.61);
+	glVertex3d(44.70, y2, 16.61);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(44.70, y2, 16.61);
+	glVertex3d(44.70, y1, 16.61);
+	glVertex3d(55.02, y1, 16.61);
+	glVertex3d(55.02, y2, 16.61);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(55.02, y2, -4.20);
+	glVertex3d(55.02, y1, -4.20);
+	glVertex3d(44.96, y1, -4.20);
+	glVertex3d(44.96, y2, -4.20);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(44.96, y2, -4.20);
+	glVertex3d(44.96, y1, -4.20);
+	glVertex3d(44.96, y1, -5.78);
+	glVertex3d(44.96, y2, -5.78);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(44.96, y2, -5.78);
+	glVertex3d(44.96, y1, -5.78);
+	glVertex3d(40.80, y1, -5.78);
+	glVertex3d(40.80, y2, -5.78);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(40.80, y2, -5.78);
+	glVertex3d(40.80, y1, -5.78);
+	glVertex3d(40.80, y1, -8.66);
+	glVertex3d(40.80, y2, -8.66);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(40.80, y2, -8.66);
+	glVertex3d(40.80, y1, -8.66);
+	glVertex3d(17.48, y1, -8.66);
+	glVertex3d(17.48, y2, -8.66);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(17.48, y2, -8.66);
+	glVertex3d(17.48, y1, -8.66);
+	glVertex3d(17.48, y1, -2.91);
+	glVertex3d(17.48, y2, -2.91);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(17.48, y2, -2.91);
+	glVertex3d(17.48, y1, -2.91);
+	glVertex3d(3.34, y1, -2.91);
+	glVertex3d(3.34, y2, -2.91);
+	glEnd();
+
+	glColor3ub(255, 0, 255);
+	//right
+	glBegin(GL_POLYGON);
+	glVertex3d(55.02, y3, 25.47);
+	glVertex3d(55.02, y1, 25.47);
+	glVertex3d(88.75, y1, 36.52);
+	glVertex3d(88.75, y3, 36.52);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(88.75, y3, 36.52);
+	glVertex3d(88.75, y1, 36.52);
+	glVertex3d(99.41, y1, 8.77);
+	glVertex3d(99.41, y3, 8.77);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(99.41, y3, 8.77);
+	glVertex3d(99.41, y1, 8.77);
+	glVertex3d(55.02, y1, -5.78);
+	glVertex3d(55.02, y3, -5.78);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(55.02, y3, -5.78);
+	glVertex3d(55.02, y1, -5.78);
+	glVertex3d(55.02, y1, 25.47);
+	glVertex3d(55.02, y3, 25.47);
+	glEnd();
+
+}
 
 void display(void) {
 	if (is_depth)
@@ -52,14 +203,29 @@ void display(void) {
 	else
 		glClear(GL_COLOR_BUFFER_BIT);
 
-	glColor3ub(0, 0, 0);
+	glColor3ub(0, 255, 255);
 
 	glBegin(GL_POLYGON);
 	glVertex3d(-77.95, y1, 20.24);
 	glVertex3d(-60.64, y1, 36.13);
 	glVertex3d(3.41, y1, 36.13);
 	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(3.34, y1, -2.91);
+	glVertex3d(3.29, y1, -38.25);
+	glVertex3d(-77.95, y1, -38.25);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(3.41, y1, 25.47);
+	glVertex3d(17.48, y1, 25.47);
+	glVertex3d(17.48, y1, -2.91);
+	glVertex3d(3.34, y1, -2.91);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(17.48, y1, 25.47);
 	glVertex3d(44.70, y1, 25.47);
+	glVertex3d(44.70, y1, 16.61);
 	glVertex3d(55.02, y1, 16.61);
 	glVertex3d(55.02, y1, -4.20);
 	glVertex3d(44.96, y1, -4.20);
@@ -68,17 +234,55 @@ void display(void) {
 	glVertex3d(40.80, y1, -8.66);
 	glVertex3d(17.48, y1, -8.66);
 	glVertex3d(17.48, y1, -2.91);
-	glVertex3d(3.34, y1, -2.91);
-	glVertex3d(3.29, y1, -38.25);
-	glVertex3d(-77.95, y1, -38.25);
 	glEnd();
 
 	glBegin(GL_POLYGON);
 	glVertex3d(55.02, y1, 25.47);
 	glVertex3d(88.75, y1, 36.52);
 	glVertex3d(99.41, y1, 8.77);
-	glVertex3d(55.62, y1, -5.78);
+	glVertex3d(55.02, y1, -5.78);
 	glEnd();
+
+
+	glBegin(GL_POLYGON);
+	glVertex3d(-77.95, y2, 20.24);
+	glVertex3d(-60.64, y2, 36.13);
+	glVertex3d(3.41, y2, 36.13);
+	glVertex3d(3.41, y2, 25.47);
+	glVertex3d(3.34, y2, -2.91);
+	glVertex3d(3.29, y2, -38.25);
+	glVertex3d(-77.95, y2, -38.25);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(3.41, y2, 25.47);
+	glVertex3d(17.48, y2, 25.47);
+	glVertex3d(17.48, y2, -2.91);
+	glVertex3d(3.34, y2, -2.91);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(17.48, y2, 25.47);
+	glVertex3d(44.70, y2, 25.47);
+	glVertex3d(44.70, y2, 16.61);
+	glVertex3d(55.02, y2, 16.61);
+	glVertex3d(55.02, y2, -4.20);
+	glVertex3d(44.96, y2, -4.20);
+	glVertex3d(44.96, y2, -5.78);
+	glVertex3d(40.80, y2, -5.78);
+	glVertex3d(40.80, y2, -8.66);
+	glVertex3d(17.48, y2, -8.66);
+	glVertex3d(17.48, y2, -2.91);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex3d(55.02, y3, 25.47);
+	glVertex3d(88.75, y3, 36.52);
+	glVertex3d(99.41, y3, 8.77);
+	glVertex3d(55.02, y3, -5.78);
+	glEnd();
+
+	wall();
 
 	glPushMatrix(); // matahari
 	glEnable(GL_COLOR_MATERIAL);
