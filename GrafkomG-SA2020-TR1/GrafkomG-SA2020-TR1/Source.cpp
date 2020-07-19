@@ -9,6 +9,10 @@ int y5 = y4 + 2;
 int y6 = y3 + 5;
 
 void init(void);
+void sun(void);
+void garbage(void);
+void tree(void);
+void cloud(void);
 void terrace(void);
 void prism(void);
 void wall(void);
@@ -696,7 +700,6 @@ void wall() {
 	glVertex3d(88.75, y3, 36.52);
 	glEnd();
 
-<<<<<<< HEAD
 	glBegin(GL_LINE_LOOP);
 	glVertex3d(88.75, y3, 36.52);
 	glVertex3d(88.75, y1, 36.52);
@@ -718,7 +721,7 @@ void wall() {
 	glVertex3d(55.02, y3, 25.47);
 	glEnd();
 }
-=======
+
 void pohon() {
 	//batang
 	GLUquadricObj* pObj;
@@ -777,13 +780,6 @@ void awan() {
 	glutSolidSphere(7, 50, 50);
 	glPopMatrix();
 }
-
-void display(void) {
-	if (is_depth)
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	else
-		glClear(GL_COLOR_BUFFER_BIT);
->>>>>>> f042a19544c889a5effc433be5ddffded9cbbf02
 
 void base() {
 	glColor3ub(255, 250, 240);
@@ -876,18 +872,7 @@ void base() {
 	glEnd();
 }
 
-void display(void) {
-	if (is_depth)
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	else
-		glClear(GL_COLOR_BUFFER_BIT);
-
-	
-	base();
-	prism();
-	wall();
-	terrace();
-
+void sun(){
 	glPushMatrix(); // matahari
 	glEnable(GL_COLOR_MATERIAL);
 	glTranslatef(-150 + x_pos, 160, 10);
@@ -896,7 +881,9 @@ void display(void) {
 	glutSolidSphere(2, 20, 20);
 	glDisable(GL_COLOR_MATERIAL);
 	glPopMatrix();
+}
 
+void garbage() {
 	glBegin(GL_LINES); // garis hitam bak sampah
 	glColor3d(0, 0, 0);
 	glVertex3d(7.20, y1, 34.13);
@@ -1057,7 +1044,9 @@ void display(void) {
 	glVertex3d(7.00, y1 + 8.7, 26.00);
 	glVertex3d(7.00, y1 + 8.7, 28.77);
 	glEnd();
+}
 
+void tree() {
 	//pohon1
 	glPushMatrix();
 	glTranslatef(-50, 0, 50);
@@ -1225,7 +1214,9 @@ void display(void) {
 	ranting();
 	glPopMatrix();
 	glPopMatrix();
+}
 
+void cloud() {
 	//awan
 	glPushMatrix();
 	glTranslatef(-130 + x_pos, 140, 35);
@@ -1247,6 +1238,23 @@ void display(void) {
 	glScalef(0.2, 0.2, 1.0);
 	awan();
 	glPopMatrix();
+}
+
+void display(void) {
+	if (is_depth)
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	else
+		glClear(GL_COLOR_BUFFER_BIT);
+
+	
+	base();
+	prism();
+	wall();
+	terrace();
+	sun();
+	garbage();
+	tree();
+	cloud();
 
 	glutSwapBuffers();
 }
