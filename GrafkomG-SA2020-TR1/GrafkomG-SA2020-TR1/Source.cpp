@@ -6,6 +6,10 @@ void init(void);
 void display(void);
 void keyboard(unsigned char, int, int);
 void shape(int, int);
+void Timer(int);
+int xx = 0, yy = 0, zz = 0, sudut = 0;
+float x_pos = 0.0f;
+float deltax = 0.05f;
 
 int is_depth;
 
@@ -17,6 +21,7 @@ int main(int argc, char** argv) {
 	glutCreateWindow("TSM-Bandung");
 	init();
 	glutDisplayFunc(display);
+	glutTimerFunc(30, Timer, 1);
 	glutKeyboardFunc(keyboard);
 	glutReshapeFunc(shape);
 	glEnable(GL_BLEND);
@@ -74,6 +79,16 @@ void display(void) {
 	glVertex3d(99.41, y1, 8.77);
 	glVertex3d(55.62, y1, -5.78);
 	glEnd();
+
+	glPushMatrix(); // matahari
+	glEnable(GL_COLOR_MATERIAL);
+	glTranslatef(-150 + x_pos ,160 ,10);
+	glRotatef(sudut, xx, yy, zz);
+	glColor3f(1, 1, 0);
+	glutSolidSphere(2, 20, 20);
+	glDisable(GL_COLOR_MATERIAL);
+	glPopMatrix();
+
 
 	glutSwapBuffers();
 }
@@ -134,4 +149,12 @@ void shape(int width, int height) {
 	gluPerspective(50.0, width / height, 5.0, 1000.0);
 	glTranslatef(0.0, -5.0, -400.0);
 	glMatrixMode(GL_MODELVIEW);
+}
+
+void Timer(int) {
+	glutPostRedisplay();
+	glutTimerFunc(30, Timer, 1);
+
+	x_pos += deltax;
+
 }
