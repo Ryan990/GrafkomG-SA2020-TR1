@@ -1,1 +1,13 @@
-﻿  GrafkomG-SA2020-TR1.vcxproj -> E:\TR\GrafkomG-SA2020-TR1\x64\Release\GrafkomG-SA2020-TR1.exe
+﻿  Source.cpp
+E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\Source.cpp(824,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\Source.cpp(824,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\Source.cpp(824,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\Source.cpp(824,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\Source.cpp(871,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+E:\TR\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\Source.cpp(875,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Generating code
+  1 of 16 functions ( 6.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GrafkomG-SA2020-TR1.vcxproj -> E:\TR\GrafkomG-SA2020-TR1\x64\Release\GrafkomG-SA2020-TR1.exe
