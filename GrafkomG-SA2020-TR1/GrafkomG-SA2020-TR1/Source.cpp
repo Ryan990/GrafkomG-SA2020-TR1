@@ -21,6 +21,7 @@ void display(void);
 void awan(void);
 void pohon(void);
 void ranting(void);
+void tanah(void);
 void keyboard(unsigned char, int, int);
 void shape(int, int);
 void Timer(int);
@@ -1240,6 +1241,257 @@ void cloud() {
 	glPopMatrix();
 }
 
+void tanah() {
+	glBegin(GL_POLYGON); // Rumput hijau depan
+	glColor3f(0, 1, 0);
+	glVertex3d(-120, y1, 90);
+	glVertex3d(-120, y1, 150);
+	glVertex3d(140, y1, 150);
+	glVertex3d(140, y1, 90);
+	glEnd();
+
+	glBegin(GL_POLYGON); // Rumput hijau belakang
+	glColor3f(0, 1, 0);
+	glVertex3d(-120, y1, 70);
+	glVertex3d(-120, y1, -150);
+	glVertex3d(140, y1, -150);
+	glVertex3d(140, y1, 70);
+	glEnd();
+
+	glBegin(GL_POLYGON); // jalan raya 1
+	glColor3f(0, 0, 0);
+	glVertex3d(-120, y1, 72);
+	glVertex3d(-120, y1, 79);
+	glVertex3d(140, y1, 79);
+	glVertex3d(140, y1, 72);
+	glEnd();
+
+	glBegin(GL_POLYGON); // jalan raya 2
+	glColor3f(0, 0, 0);
+	glVertex3d(-120, y1, 81);
+	glVertex3d(-120, y1, 88);
+	glVertex3d(140, y1, 88);
+	glVertex3d(140, y1, 81);
+	glEnd();
+
+	glBegin(GL_POLYGON); // garis jalan raya
+	glColor3f(0, 0, 0);
+	glVertex3d(-115, y1, 79);
+	glVertex3d(-115, y1, 81);
+	glVertex3d(-110, y1, 81);
+	glVertex3d(-110, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-105, y1, 79);
+	glVertex3d(-105, y1, 81);
+	glVertex3d(-100, y1, 81);
+	glVertex3d(-100, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-95, y1, 79);
+	glVertex3d(-95, y1, 81);
+	glVertex3d(-90, y1, 81);
+	glVertex3d(-90, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-85, y1, 79);
+	glVertex3d(-85, y1, 81);
+	glVertex3d(-80, y1, 81);
+	glVertex3d(-80, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-75, y1, 79);
+	glVertex3d(-75, y1, 81);
+	glVertex3d(-70, y1, 81);
+	glVertex3d(-70, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-65, y1, 79);
+	glVertex3d(-65, y1, 81);
+	glVertex3d(-60, y1, 81);
+	glVertex3d(-60, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-55, y1, 79);
+	glVertex3d(-55, y1, 81);
+	glVertex3d(-50, y1, 81);
+	glVertex3d(-50, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-45, y1, 79);
+	glVertex3d(-45, y1, 81);
+	glVertex3d(-40, y1, 81);
+	glVertex3d(-40, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-35, y1, 79);
+	glVertex3d(-35, y1, 81);
+	glVertex3d(-30, y1, 81);
+	glVertex3d(-30, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-25, y1, 79);
+	glVertex3d(-25, y1, 81);
+	glVertex3d(-20, y1, 81);
+	glVertex3d(-20, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-15, y1, 79);
+	glVertex3d(-15, y1, 81);
+	glVertex3d(-10, y1, 81);
+	glVertex3d(-10, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(-5, y1, 79);
+	glVertex3d(-5, y1, 81);
+	glVertex3d(-0, y1, 81);
+	glVertex3d(-0, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(5, y1, 79);
+	glVertex3d(5, y1, 81);
+	glVertex3d(10, y1, 81);
+	glVertex3d(10, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(15, y1, 79);
+	glVertex3d(15, y1, 81);
+	glVertex3d(20, y1, 81);
+	glVertex3d(20, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(25, y1, 79);
+	glVertex3d(25, y1, 81);
+	glVertex3d(30, y1, 81);
+	glVertex3d(30, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(35, y1, 79);
+	glVertex3d(35, y1, 81);
+	glVertex3d(40, y1, 81);
+	glVertex3d(40, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(45, y1, 79);
+	glVertex3d(45, y1, 81);
+	glVertex3d(50, y1, 81);
+	glVertex3d(50, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(55, y1, 79);
+	glVertex3d(55, y1, 81);
+	glVertex3d(60, y1, 81);
+	glVertex3d(60, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(55, y1, 79);
+	glVertex3d(55, y1, 81);
+	glVertex3d(60, y1, 81);
+	glVertex3d(60, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(65, y1, 79);
+	glVertex3d(65, y1, 81);
+	glVertex3d(70, y1, 81);
+	glVertex3d(70, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(75, y1, 79);
+	glVertex3d(75, y1, 81);
+	glVertex3d(80, y1, 81);
+	glVertex3d(80, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(85, y1, 79);
+	glVertex3d(85, y1, 81);
+	glVertex3d(90, y1, 81);
+	glVertex3d(90, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(95, y1, 79);
+	glVertex3d(95, y1, 81);
+	glVertex3d(100, y1, 81);
+	glVertex3d(100, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(105, y1, 79);
+	glVertex3d(105, y1, 81);
+	glVertex3d(110, y1, 81);
+	glVertex3d(110, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(115, y1, 79);
+	glVertex3d(115, y1, 81);
+	glVertex3d(120, y1, 81);
+	glVertex3d(120, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(125, y1, 79);
+	glVertex3d(125, y1, 81);
+	glVertex3d(130, y1, 81);
+	glVertex3d(130, y1, 79);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0, 0, 0);
+	glVertex3d(135, y1, 79);
+	glVertex3d(135, y1, 81);
+	glVertex3d(140, y1, 81);
+	glVertex3d(140, y1, 79);
+	glEnd();
+
+}
+
 void display(void) {
 	if (is_depth)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1255,7 +1507,7 @@ void display(void) {
 	garbage();
 	tree();
 	cloud();
-
+	tanah();
 	glutSwapBuffers();
 }
 
