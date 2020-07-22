@@ -1,13 +1,6 @@
 #include <windows.h>
 #include <GL/glut.h>
 
-int y1 = 0;
-int y2 = y1 + 50;
-int y3 = y2 + 10;
-int y4 = 20;
-int y5 = y4 + 2;
-int y6 = y3 + 5;
-
 void init(void);
 void sun(void);
 void garbage(void);
@@ -23,11 +16,30 @@ void pohon(void);
 void ranting(void);
 void tanah(void);
 void keyboard(unsigned char, int, int);
+void mouse(int, int, int, int);
+void motion(int, int);
 void shape(int, int);
 void Timer(int);
+
+int y1 = 0;
+int y2 = y1 + 50;
+int y3 = y2 + 10;
+int y4 = 20;
+int y5 = y4 + 2;
+int y6 = y3 + 5;
+
+float zoom = 1.0f;
+float direction = 0.0f;
+
 int xx = 0, yy = 0, zz = 0, sudut = 0;
 float x_pos = 0.0f;
 float deltax = 0.05f;
+
+bool mouseDown = false;
+float xrot = 0.0f;
+float yrot = 0.0f;
+float xdiff = 0.0f;
+float ydiff = 0.0f;
 
 int is_depth;
 
@@ -41,6 +53,8 @@ int main(int argc, char** argv) {
 	glutDisplayFunc(display);
 	glutTimerFunc(30, Timer, 1);
 	glutKeyboardFunc(keyboard);
+	glutMouseFunc(mouse);
+	glutMotionFunc(motion);
 	glutReshapeFunc(shape);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -56,11 +70,34 @@ void init(void) {
 	glClearColor(255, 255, 255, 0.0);
 	glMatrixMode(GL_PROJECTION);
 	glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_LIGHTING);
+	//glEnable(GL_COLOR_MATERIAL);
+	//glEnable(GL_LIGHT0);
 	is_depth = 1;
 	glMatrixMode(GL_MODELVIEW);
 	glPointSize(9.0);
 	glLineWidth(1.0f);
 	glLineWidth(3.0f);
+}
+
+void mouse(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+		mouseDown = true;
+
+		xdiff = x - xrot;
+		ydiff = y - yrot;
+	}
+	else
+		mouseDown = false;
+}
+
+void motion(int x, int y) {
+	if (mouseDown) {
+		yrot = x - xdiff;
+		xrot = y - ydiff;
+
+		glutPostRedisplay();
+	}
 }
 
 void terrace(){
@@ -736,8 +773,6 @@ void pohon() {
 	glPopMatrix();
 }
 
-
-//ranting
 void ranting() {
 	GLUquadricObj* pObj;
 	pObj = gluNewQuadric();
@@ -1489,7 +1524,6 @@ void tanah() {
 	glVertex3d(140, y1, 81);
 	glVertex3d(140, y1, 79);
 	glEnd();
-
 }
 
 void display(void) {
@@ -1497,8 +1531,13 @@ void display(void) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	else
 		glClear(GL_COLOR_BUFFER_BIT);
-
 	
+	glLoadIdentity();
+	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
+	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+	glTranslatef(direction, 0.0f, 0.0f);
+	glScalef(zoom, zoom, zoom);
+
 	base();
 	prism();
 	wall();
@@ -1508,56 +1547,31 @@ void display(void) {
 	tree();
 	cloud();
 	tanah();
+
+	glFlush();
 	glutSwapBuffers();
 }
 
 void keyboard(unsigned char key, int x, int y) {
 	switch (key) {
 	case '3':
-		glTranslatef(3.0, 0.0, 0.0);
+		direction += 3.0f;
 		break;
 	case '1':
-		glTranslatef(-3.0, 0.0, 0.0);
+		direction -= 3.0f;
 		break;
-
-	case 's':
-	case 'S':
-		glRotatef(2.0, 1.0, 0.0, 0.0);
-		break;
-	case 'x':
-	case 'X':
-		glRotatef(-2.0, 1.0, 0.0, 0.0);
-		break;
-	case 'd':
-	case 'D':
-		glRotatef(2.0, 0.0, 1.0, 0.0);
-		break;
-	case 'c':
-	case 'C':
-		glRotatef(-2.0, 0.0, 1.0, 0.0);
-		break;
-	case 'a':
-	case 'A':
-		glRotatef(2.0, 0.0, 0.0, 1.0);
-		break;
-	case 'z':
-	case 'Z':
-		glRotatef(-2.0, 0.0, 0.0, 1.0);
-		break;
-
 
 	case 'q':
 	case 'Q':
-		glScalef(0.8, 0.8, 0.8f);
+		zoom += 0.2f;
 		break;
 	case 'e':
 	case 'E':
-		glScalef(1.2, 1.2, 1.2f);
+		zoom -= 0.2f;
 		break;
 	}
 	display();
 }
-
 
 void shape(int width, int height) {
 	if (height == 0) height = 1;
@@ -1574,5 +1588,4 @@ void Timer(int) {
 	glutTimerFunc(30, Timer, 1);
 
 	x_pos += deltax;
-
 }
