@@ -69,10 +69,10 @@ int main(int argc, char** argv) {
 void init(void) {
 	glClearColor(255, 255, 255, 0.0);
 	glMatrixMode(GL_PROJECTION);
-	glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_LIGHTING);
 	//glEnable(GL_COLOR_MATERIAL);
 	//glEnable(GL_LIGHT0);
+	glEnable(GL_DEPTH_TEST);
 	is_depth = 1;
 	glMatrixMode(GL_MODELVIEW);
 	glPointSize(9.0);
@@ -100,7 +100,7 @@ void motion(int x, int y) {
 	}
 }
 
-void terrace(){
+void terrace() {
 	//cover
 	glColor3ub(0, 0, 0);
 
@@ -122,7 +122,7 @@ void terrace(){
 	glVertex3d(55.02, y4, 32.16);
 	glVertex3d(55.02, y5, 32.16);
 	glEnd();
-	
+
 	glBegin(GL_LINES);
 	glVertex3d(86.46, y5, 42.47);
 	glVertex3d(86.46, y4, 42.47);
@@ -305,7 +305,7 @@ void terrace(){
 	glVertex3d(82.99, y4, 41.33);
 	glVertex3d(83.98, y4, 41.65);
 	glVertex3d(83.98, y1, 41.65);
-	
+
 	glEnd();
 
 	glBegin(GL_POLYGON);
@@ -313,7 +313,7 @@ void terrace(){
 	glVertex3d(83.98, y4, 41.65);
 	glVertex3d(84.43, y4, 40.32);
 	glVertex3d(84.43, y1, 40.32);
-	
+
 	glEnd();
 
 	glBegin(GL_POLYGON);
@@ -908,7 +908,7 @@ void base() {
 	glEnd();
 }
 
-void sun(){
+void sun() {
 	glPushMatrix(); // matahari
 	glEnable(GL_COLOR_MATERIAL);
 	glTranslatef(-150 + x_pos, 160, 10);
@@ -1531,7 +1531,7 @@ void display(void) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	else
 		glClear(GL_COLOR_BUFFER_BIT);
-	
+
 	glLoadIdentity();
 	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
@@ -1575,7 +1575,7 @@ void keyboard(unsigned char key, int x, int y) {
 
 void shape(int width, int height) {
 	if (height == 0) height = 1;
-
+	glViewport(0, 0, width, height);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(50.0, width / height, 5.0, 1000.0);
