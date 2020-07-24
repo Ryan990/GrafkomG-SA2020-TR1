@@ -21,12 +21,15 @@ void motion(int, int);
 void shape(int, int);
 void Timer(int);
 
+int specularLightstatus = 1;
+bool ambientLightStatus = true; 
 int y1 = 0;
 int y2 = y1 + 50;
 int y3 = y2 + 10;
 int y4 = 20;
 int y5 = y4 + 2;
 int y6 = y3 + 5;
+int cx, cy;
 
 float zoom = 1.0f;
 float direction = 0.0f;
@@ -67,11 +70,21 @@ int main(int argc, char** argv) {
 }
 
 void init(void) {
+	GLfloat LightPosition[] = { 10.0f, 10.0f, 20.0f, 0.0f };
+	GLfloat LightAmbient[] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	GLfloat LightDiffuse[] = { 0.7f, 0.7f, 0.7f, 1.0f };
+	GLfloat LightSpecular[] = { 0.5f, 0.5f, 0.5f, 1.0f };
+	GLfloat Shine[] = { 80 };
+	glShadeModel(GL_SMOOTH);
+	glEnable(GL_DEPTH_TEST);
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, LightSpecular);
+	glMaterialfv(GL_FRONT, GL_SHININESS, Shine);
+
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
 	glClearColor(255, 255, 255, 0.0);
 	glMatrixMode(GL_PROJECTION);
-	//glEnable(GL_LIGHTING);
-	//glEnable(GL_COLOR_MATERIAL);
-	//glEnable(GL_LIGHT0);
 	glEnable(GL_DEPTH_TEST);
 	is_depth = 1;
 	glMatrixMode(GL_MODELVIEW);
@@ -89,6 +102,7 @@ void mouse(int button, int state, int x, int y) {
 	}
 	else
 		mouseDown = false;
+
 }
 
 void motion(int x, int y) {
@@ -1568,6 +1582,36 @@ void keyboard(unsigned char key, int x, int y) {
 	case 'e':
 	case 'E':
 		zoom -= 0.2f;
+		break;
+	case 'O':
+	case 'o':
+		if (specularLightstatus == 1)
+		{
+			glDisable(GL_LIGHTING);
+			glutPostRedisplay();
+			specularLightstatus = 0;
+		}
+		else
+		{
+			glEnable(GL_LIGHTING);
+			glutPostRedisplay();
+			specularLightstatus = 1;
+		}
+		break;
+	case 'p':
+	case     'P':
+		if (ambientLightStatus == true)
+		{
+			glDisable(GL_LIGHT0);
+			glutPostRedisplay();
+			ambientLightStatus = false;
+		}
+		else
+		{
+			glEnable(GL_LIGHT0);
+			glutPostRedisplay();
+			ambientLightStatus = true;
+		}
 		break;
 	}
 	display();
