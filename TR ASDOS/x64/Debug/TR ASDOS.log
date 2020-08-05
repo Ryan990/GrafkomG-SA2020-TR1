@@ -1,0 +1,2 @@
+﻿  Source.cpp
+D:\SEMESTER 6\GRAFIKA KOMPUTER\Visual Studio\New folder\GrafkomG-SA2020-TR1\TR ASDOS\Source.cpp(2,10): fatal error C1083: Cannot open include file: 'GL/freeglut.h': No such file or directory
